@@ -10,7 +10,7 @@ test('Encoder Integration with qs', function (t) {
     test: 'こんにちは！'
   }, {
     encoder: qsIconv.encoder('shift_jis')
-  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49')
+  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I')
   t.end()
 })
 
@@ -19,7 +19,7 @@ test('Encoder Integration with qs & iconv', function (t) {
     test: 'こんにちは！'
   }, {
     encoder: qsIconv.encoder('shift_jis', true)
-  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49')
+  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I')
   t.end()
 })
 
@@ -46,7 +46,7 @@ test('Decoder integration with querystring', function (t) {
   querystring.escape = qsIconv.encoder('shift_jis')
   t.deepEqual(querystring.stringify({
     test: 'こんにちは！'
-  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49')
+  }), 'test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I')
   querystring.escape = _escape
   t.end()
 })
