@@ -74,7 +74,7 @@ request('http://outdated.company.jp/method.html', {
 })
 ```
 
-_(Note: As of writing this `request` has not yet updated `qs` to the latest version, make sure that the version of `request` that you use supports at least version `6.2.0` of qs)_
+_(Note: `request` supports this library from version `2.72.0`)_
 
 ## Iconv
 This package uses by default [`iconv-lite`](https://www.npmjs.com/package/iconv-lite) which is a JavaScript-only variant of [iconv](https://www.npmjs.com/package/iconv). But since its stripped down to the bone and might be missing some tricky edge cases this library also allows to take the iconv instead.
