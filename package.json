@@ -1,7 +1,7 @@
 {
   "name": "qs-iconv",
   "version": "1.0.0",
-  "description": "IconV character encoder/decoder for the qs library.",
+  "description": "Character encoding for qs (and by extension: request) and querystring.",
   "main": "index.js",
   "scripts": {
     "test": "standard && npm run coverage",
