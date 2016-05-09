@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martinheidegger/qs_iconv.git"
+    "url": "git+https://github.com/martinheidegger/qs-iconv.git"
   },
   "keywords": [
     "iconv",
@@ -22,9 +22,9 @@
   "author": "Martin Heidegger <martin.heidegger@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/martinheidegger/qs_iconv/issues"
+    "url": "https://github.com/martinheidegger/qs-iconv/issues"
   },
-  "homepage": "https://github.com/martinheidegger/qs_iconv#readme",
+  "homepage": "https://github.com/martinheidegger/qs-iconv#readme",
   "devDependencies": {
     "qs": "^6.2.0",
     "standard": "^7.0.1",
