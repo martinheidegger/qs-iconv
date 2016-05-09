@@ -10,7 +10,7 @@ Character encoding for [qs](https://www.npmjs.com/package/qs) (and by extension:
 Sending requests in Node.js usually encodes url using the `utf-8` character code (both with [querystring](https://nodejs.org/api/querystring.html) and qs). This means that sending a String like `こんにちは！` will become `%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%EF%BC%81`.
 Unfortunately not all servers are implemented in `utf8` (particularly in Japan [ShiftJIS](https://en.wikipedia.org/wiki/Shift_JIS) is still very often seen) and those servers might expect form requests to be sent using another encoding.
 
-Example: If the servers speaks `shift_jis` then the above string should be sent as: `%82%B1%82%F1%82%C9%82%BF%82%CD%81%49`.
+Example: If the servers speaks `shift_jis` then the above string should be sent as: `%82%B1%82%F1%82%C9%82%BF%82%CD%81I`.
 
 _(Note: Browsers also send form data to servers with `shift_jis` support as `shift_jis` encoded String)_
 
@@ -28,7 +28,7 @@ _(decoder)_
 ```JavaScript
 var qsIconv = require('qs-iconv')
 var qs = require('qs')
-qs.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81%49', {decoder: qsIconv.decoder('shift_jis')})
+qs.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81I', {decoder: qsIconv.decoder('shift_jis')})
 ```
 
 ## Querystring
@@ -50,7 +50,7 @@ var qsIconv = require('qs-iconv')
 var querystring = require('querystring')
 var tmpUnescape = querystring.unescape
 querystring.unescape = qsIconv.decoder('shift_jis')
-querystring.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81%49')
+querystring.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81I')
 querystring.unescape = tmpUnescape
 ```
 

@@ -6,7 +6,7 @@ var querystring = require('querystring')
 var qsIconv = require('..')
 
 test('Decoder Integration with qs', function (t) {
-  t.deepEqual(qs.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49', {
+  t.deepEqual(qs.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I', {
     decoder: qsIconv.decoder('shift_jis')
   }), {
     test: 'こんにちは！'
@@ -15,7 +15,7 @@ test('Decoder Integration with qs', function (t) {
 })
 
 test('Decoder Integration with qs & iconv', function (t) {
-  t.deepEqual(qs.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49', {
+  t.deepEqual(qs.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I', {
     decoder: qsIconv.decoder('shift_jis', true)
   }), {
     test: 'こんにちは！'
@@ -44,7 +44,7 @@ test('Alternative Decoder Integration with qs', function (t) {
 test('Decoder integration with querystring', function (t) {
   var _unescape = querystring.unescape
   querystring.unescape = qsIconv.decoder('shift_jis')
-  t.deepEqual(querystring.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81%49'), {
+  t.deepEqual(querystring.parse('test=%82%B1%82%F1%82%C9%82%BF%82%CD%81I'), {
     test: 'こんにちは！'
   })
   querystring.unescape = _unescape
