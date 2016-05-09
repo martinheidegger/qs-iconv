@@ -4,9 +4,10 @@
   "description": "Character encoding for qs (and by extension: request) and querystring.",
   "main": "index.js",
   "scripts": {
-    "test": "standard && npm run coverage",
+    "test": "standard && npm run coverage && npm run md",
     "coverage": "tap --coverage test/**/*.js",
-    "quick": "tap test/**/*.js"
+    "quick": "tap test/**/*.js",
+    "md": "evalmd Readme.md"
   },
   "repository": {
     "type": "git",
@@ -26,16 +27,14 @@
   },
   "homepage": "https://github.com/martinheidegger/qs-iconv#readme",
   "devDependencies": {
+    "evalmd": "0.0.17",
     "qs": "^6.2.0",
+    "request": "^2.72.0",
     "standard": "^7.0.1",
     "tap": "^5.7.1",
     "iconv": "^2.2.0"
   },
   "dependencies": {
-    "iconv-lite": "^0.4.13",
-    "request": "^2.72.0"
-  },
-  "peerDependencies": {
-    "iconv": "^2.2.0"
+    "iconv-lite": "^0.4.13"
   }
 }

@@ -18,14 +18,14 @@ _(Note: Browsers also send form data to servers with `shift_jis` support as `shi
 This library implements the `encoder` and `decoder` option for qs after installing it you can use it like:
 
 _(encoder)_
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 var qs = require('qs')
 qs.stringify({test: 'こんにちは！'}, {encoder: qsIconv.encoder('shift_jis')})
 ```
 
 _(decoder)_
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 var qs = require('qs')
 qs.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81I', {decoder: qsIconv.decoder('shift_jis')})
@@ -34,7 +34,7 @@ qs.parse('%82%B1%82%F1%82%C9%82%BF%82%CD%81I', {decoder: qsIconv.decoder('shift_
 ## Querystring
 Node.js comes with `require('querystring')` right out of the box. It has fewer features than `qs` but should work in quite a few cases as well. This library supports querystring as well! Here is how you would encode the above example using querystring.
 
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 var querystring = require('querystring')
 var tmpEscape = querystring.escape
@@ -45,7 +45,7 @@ querystring.escape = tmpEscape
 
 Of course you unescape works as well:
 
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 var querystring = require('querystring')
 var tmpUnescape = querystring.unescape
@@ -57,13 +57,14 @@ querystring.unescape = tmpUnescape
 ## Request
 Most likely you will not come in touch with iconv through `qs` or `querystring` but rather through `request`. Here is how you can make a `shift_jis` POST request using this library:
 
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 var request = require('request')
-request('http://outdated.company.jp/method.html', {
+// inter-locale.com explains encoding in depth
+request('http://www.inter-locale.com/CodesetTesting2.jsp', {
     method: 'POST',
     data: {
-        test: 'こんにちは！'
+        field1: 'こんにちは！'
     },
     qsStringifyOptions: {
         encoder: qsIconv.encoder('shift_jis')
@@ -80,7 +81,7 @@ _(Note: `request` supports this library from version `2.72.0`)_
 This package uses by default [`iconv-lite`](https://www.npmjs.com/package/iconv-lite) which is a JavaScript-only variant of [iconv](https://www.npmjs.com/package/iconv). But since its stripped down to the bone and might be missing some tricky edge cases this library also allows to take the iconv instead.
 For it to work you need to have `iconv` installed **additionally** to `qs-iconv`!
 
-```JavaScript
+```javascript
 var qsIconv = require('qs-iconv')
 qsIconv.decoder('shift_jis', true)
 qsIconv.encoder('shift_jis', true)
