@@ -1,0 +1,40 @@
+{
+  "name": "qs-iconv",
+  "version": "1.0.0",
+  "description": "IconV character encoder/decoder for the qs library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && npm run coverage",
+    "coverage": "tap --coverage test/**/*.js",
+    "quick": "tap test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinheidegger/qs_iconv.git"
+  },
+  "keywords": [
+    "iconv",
+    "shift_jis",
+    "querstring",
+    "qs",
+    "request"
+  ],
+  "author": "Martin Heidegger <martin.heidegger@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinheidegger/qs_iconv/issues"
+  },
+  "homepage": "https://github.com/martinheidegger/qs_iconv#readme",
+  "devDependencies": {
+    "qs": "^6.2.0",
+    "standard": "^7.0.1",
+    "tap": "^5.7.1"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.13",
+    "request": "^2.72.0"
+  },
+  "optionalDependencies": {
+    "iconv": "^2.2.0"
+  }
+}
