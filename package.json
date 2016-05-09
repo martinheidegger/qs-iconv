@@ -28,7 +28,8 @@
   "devDependencies": {
     "qs": "^6.2.0",
     "standard": "^7.0.1",
-    "tap": "^5.7.1"
+    "tap": "^5.7.1",
+    "iconv": "^2.2.0"
   },
   "dependencies": {
     "iconv-lite": "^0.4.13",
