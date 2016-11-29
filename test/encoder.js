@@ -51,6 +51,15 @@ test('Decoder integration with querystring', function (t) {
   t.end()
 })
 
+test('Encoder correctly handles short characters like linefeed', function (t) {
+  t.equal(qs.stringify({
+    test: 'test\r\ntest'
+  }, {
+    encoder: qsIconv.encoder('ISO-8859-1')
+  }), 'test=test%0D%0Atest')
+  t.end()
+})
+
 test('Empty String encoder', function (t) {
   t.equal(qsIconv.encoder('shift_jis')(''), '')
   t.end()

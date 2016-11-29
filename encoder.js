@@ -18,6 +18,9 @@ function encodeChar (char) {
     char === 0x7E) {
     return String.fromCharCode(char)
   }
+  if (char < 0x10) {
+    return '%0' + char.toString(16).toUpperCase()
+  }
   return '%' + char.toString(16).toUpperCase()
 }
 
