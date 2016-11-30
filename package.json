@@ -28,11 +28,11 @@
   "homepage": "https://github.com/martinheidegger/qs-iconv#readme",
   "devDependencies": {
     "evalmd": "0.0.17",
+    "iconv": "^2.2.0",
     "qs": "^6.2.0",
-    "request": "^2.72.0",
-    "standard": "^7.0.1",
-    "tap": "^5.7.1",
-    "iconv": "^2.2.0"
+    "request": "^2.79.0",
+    "standard": "^8.6.0",
+    "tap": "^8.0.1"
   },
   "dependencies": {
     "iconv-lite": "^0.4.13"
