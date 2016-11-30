@@ -1,6 +1,6 @@
 {
   "name": "qs-iconv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Character encoding for qs (and by extension: request) and querystring.",
   "main": "index.js",
   "scripts": {
