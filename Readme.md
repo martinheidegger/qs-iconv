@@ -61,7 +61,7 @@ Most likely you will not come in touch with iconv through `qs` or `querystring` 
 var qsIconv = require('qs-iconv')
 var request = require('request')
 // inter-locale.com explains encoding in depth
-request('http://www.inter-locale.com/CodesetTesting2.jsp', {
+request('https://encoding-server-jsdxxvgqvo.now.sh/', {
     method: 'POST',
     data: {
         field1: 'こんにちは！'
